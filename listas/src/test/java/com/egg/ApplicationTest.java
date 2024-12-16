@@ -23,6 +23,16 @@ class ApplicationTest {
         // verify(listaStrings).size();
         when(listaStrings.size()).thenReturn(0);
         Integer tamanio = listaStrings.size();
+    }
+
+    @Test
+    public void configureMockObject2(){
+            //Devolver un tamaño de lista predeterminado diferente
+        List<String> listaStrings = mock(List.class);
+            listaStrings.add("Hoy es 16 de diciembre");
+        when(listaStrings.size()).thenReturn(16);
+
+        Integer tamanio = listaStrings.size();
         assertTrue(tamanio.equals(0));
     }
 }
