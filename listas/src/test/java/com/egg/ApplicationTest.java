@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import java.util.List;
@@ -36,5 +37,13 @@ class ApplicationTest {
 
         Integer tamanio = listaStrings.size();
         assertTrue(tamanio.equals(0));
+    }
+
+    @Test
+    public void verificarMetodo() {
+        List<String> listaStrings = mock(List.class);
+        listaStrings.add("Hoy es 16 de diciembre");
+
+        verify(listaStrings).add("Hoy es 16 de diciembre");
     }
 }
